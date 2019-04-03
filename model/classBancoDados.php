@@ -27,8 +27,8 @@ class classBancoDados {
             $this->IdServidor = $Servidor;
         }
     }
-
-    // Métodos públicos
+ //Conexão do banco
+    //    // Métodos públicos
     public function AbrirConexao() {
         $this->ConexaoBanco = new mysqli($this->IdServidor,"root","1234","nossobel_proj");
 
