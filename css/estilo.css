@@ -1,0 +1,9 @@
+/*ERRO MESSAGE*/
+.mensagem-erro {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    color: crimson;
+    text-align: center;
+    font-style: inherit;
+    background-color: #ffe8a1;
+}
