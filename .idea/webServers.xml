@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="d0641092-50c7-4484-952f-fbb58bcbeade" name="TESTE" url="http://localhost/SaLasProj/">
+        <fileTransfer port="0" mountedRoot="C:\Apache24\htdocs\SaLasProj" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>
