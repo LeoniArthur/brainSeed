@@ -30,15 +30,14 @@ class classBancoDados {
  //Conexão do banco
     //    // Métodos públicos
     public function AbrirConexao() {
-        $this->ConexaoBanco = new mysqli($this->IdServidor,"root","1234","nossobel_proj");
+        $this->ConexaoBanco = new mysqli($this->IdServidor,"seed","seed","brainseed_db");
 
         if(mysqli_connect_errno() != 0) {
             $this->ConexaoBanco = NULL;
             $this->NumeroUltimoErro = mysqli_connect_errno();
             $this->DescricaoErro = mysqli_connect_error();
             return FALSE;
-        }
-        else {
+        } else {
             $this->ConexaoBanco->set_charset("utf8");
             return $this->ConexaoBanco;
         }
@@ -115,9 +114,9 @@ class classBancoDados {
                 $ListaCampos .= $Campo;
                 $ListaValores .= $Valor;
 
-                $keys = array_keys($Valores);
+                //$keys = array_keys($Valores);
 
-                if ($Campo != end($keys)) {
+                if ($Campo != end(array_keys($Valores))) {
                     $ListaCampos .= ",";
                     $ListaValores .= ",";
                 }
@@ -166,44 +165,6 @@ class classBancoDados {
     }
 
     public function ExecUPDATE() {
-        if($this->ComandoSQL != "") {
-            $this->Resultado = $this->ConexaoBanco->query($this->ComandoSQL);
-
-            if($this->Resultado == FALSE) {
-                return FALSE;
-            }
-            else {
-                if ($this->ConexaoBanco->affected_rows == 0) {
-                    return FALSE;
-                }
-                else {
-                    return TRUE;
-                }
-            }
-        }
-        else {
-            return FALSE;
-        }
-    }
-
-
-    public function SetDELETE($Valores,$Tabela = "") {
-        if(($Tabela != "") && (count($Valores) > 0)) {
-            $CamposValores = "";
-
-            foreach($Valores as $Campo=>$Valor) {
-                $CamposValores .= $Campo." = ".$Valor;
-
-                if ($Campo !== end(array_keys($Valores))) {
-                    $CamposValores .= ",";
-                }
-            }
-
-            $this->ComandoSQL = "DELETE FROM $Tabela";
-        }
-    }
-
-    public function ExecDELETE() {
         if($this->ComandoSQL != "") {
             $this->Resultado = $this->ConexaoBanco->query($this->ComandoSQL);
 
