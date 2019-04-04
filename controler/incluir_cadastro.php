@@ -1,7 +1,7 @@
 <?php
 
-require_once ("/Apache24/htdocs/SaLasProj/model/classBancoDados.php");
-require_once ("/Apache24/htdocs/SaLasProj/model/funcoes_diversas.php");
+require_once ("/Apache24/htdocs/brainSeed/model/classBancoDados.php");
+require_once ("/Apache24/htdocs/brainSeed/model/funcoes_diversas.php");
 
 
 $cnpj = $_REQUEST["cnpj"];
@@ -118,10 +118,10 @@ if(!$ErroDados){
 
         if(!$conexao_bd->ExecINSERT()){
 
+
             echo "<h4 class='mensagem-erro'>Erro ao inserir os dados!!</h4>";
 
         }else{
-
             echo "<script>alert('Dados inseridos com sucesso!');</script>";
             echo "<script>setTimeout(location.href = 'Cliente.php', 1000);</script>";
 

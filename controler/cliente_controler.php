@@ -1,6 +1,6 @@
 <?php
 
-require_once ("/Apache24/htdocs/SaLasProj/model/classBancoDados.php");
+require_once ("/Apache24/htdocs/brainSeed/model/classBancoDados.php");
 
 
 class cliente_controler{

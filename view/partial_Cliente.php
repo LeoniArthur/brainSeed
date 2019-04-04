@@ -49,7 +49,7 @@
         });
     </script>
 
-    <link rel="stylesheet" type="text/css" href="/../SaLasProj/css/estilo.css"
+    <link rel="stylesheet" type="text/css" href="/../brainSeed/css/estilo.css"
 
 </head>
 
