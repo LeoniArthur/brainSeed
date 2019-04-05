@@ -145,7 +145,7 @@
             </ol>
 
             <!-- Page Content -->
-            <h1>Clientes</h1>
+            <h1>Produtos</h1>
             <hr>
             <script src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -161,7 +161,7 @@
 
 					
             <?php
-            include ("view/partial_Cliente.php");
+            include ("view/partial_Produto.php");
             ?>
 
             <!--
@@ -186,7 +186,7 @@ include ("controler/produto_controler.php");
 <div class="card mb-3">
     <div class="card-header">
         <i class="fas fa-table"></i>
-        Tabela de clientes</div>
+        Tabela de produtos</div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
