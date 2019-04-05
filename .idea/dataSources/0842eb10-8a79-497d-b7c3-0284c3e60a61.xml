@@ -6,98 +6,117 @@
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
-    <schema id="3" parent="1" name="db_blog"/>
-    <schema id="4" parent="1" name="information_schema"/>
-    <schema id="5" parent="1" name="mysql"/>
-    <schema id="6" parent="1" name="nossobel_proj"/>
-    <schema id="7" parent="1" name="performance_schema"/>
-    <schema id="8" parent="1" name="sakila"/>
-    <schema id="9" parent="1" name="sistema"/>
-    <schema id="10" parent="1" name="sys"/>
-    <schema id="11" parent="1" name="world"/>
-    <table id="12" parent="2" name="cliente"/>
-    <column id="13" parent="12" name="id">
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="nossobel_proj"/>
+    <schema id="6" parent="1" name="performance_schema"/>
+    <schema id="7" parent="1" name="sys"/>
+    <table id="8" parent="2" name="cliente"/>
+    <table id="9" parent="2" name="produto"/>
+    <column id="10" parent="8" name="id">
       <Position>1</Position>
       <DataType>int(6)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="14" parent="12" name="cnpj">
+    <column id="11" parent="8" name="cnpj">
       <Position>2</Position>
       <DataType>varchar(30)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="15" parent="12" name="razao">
+    <column id="12" parent="8" name="razao">
       <Position>3</Position>
       <DataType>varchar(30)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="16" parent="12" name="nome_fantasia">
+    <column id="13" parent="8" name="cep">
       <Position>4</Position>
       <DataType>varchar(30)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="17" parent="12" name="cep">
+    <column id="14" parent="8" name="endereco">
       <Position>5</Position>
       <DataType>varchar(30)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="18" parent="12" name="endereco">
+    <column id="15" parent="8" name="numero">
       <Position>6</Position>
       <DataType>varchar(30)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="19" parent="12" name="numero">
+    <column id="16" parent="8" name="bairro">
       <Position>7</Position>
       <DataType>varchar(30)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="20" parent="12" name="bairro">
+    <column id="17" parent="8" name="complemento">
       <Position>8</Position>
       <DataType>varchar(30)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="21" parent="12" name="complemento">
+    <column id="18" parent="8" name="cidade">
       <Position>9</Position>
       <DataType>varchar(30)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="22" parent="12" name="cidade">
+    <column id="19" parent="8" name="uf">
       <Position>10</Position>
       <DataType>varchar(30)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="23" parent="12" name="uf">
+    <column id="20" parent="8" name="email">
       <Position>11</Position>
-      <DataType>varchar(2)|0</DataType>
+      <DataType>varchar(30)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="24" parent="12" name="nome">
+    <column id="21" parent="8" name="telefone">
       <Position>12</Position>
       <DataType>varchar(30)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="25" parent="12" name="email">
+    <column id="22" parent="8" name="ramo">
       <Position>13</Position>
       <DataType>varchar(30)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="26" parent="12" name="telefone">
+    <column id="23" parent="8" name="status">
       <Position>14</Position>
       <DataType>varchar(30)|0</DataType>
-      <NotNull>1</NotNull>
     </column>
-    <column id="27" parent="12" name="ramo">
-      <Position>15</Position>
+    <key id="24" parent="8" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="25" parent="9" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="26" parent="9" name="nome">
+      <Position>2</Position>
       <DataType>varchar(30)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="28" parent="12" name="status">
-      <Position>16</Position>
-      <DataType>varchar(30)|0</DataType>
+    <column id="27" parent="9" name="descricao">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="28" parent="9" name="valor_compra">
+      <Position>4</Position>
+      <DataType>float|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="29" parent="12" name="PRIMARY">
+    <column id="29" parent="9" name="valor__venda">
+      <Position>5</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="30" parent="9" name="imagem">
+      <Position>6</Position>
+      <DataType>mediumblob|0</DataType>
+    </column>
+    <key id="31" parent="9" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
