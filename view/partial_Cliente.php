@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,17 +13,17 @@
             $("#btnCadastrar").click(function() {
 
                 var cnpj = $("input[name=cnpj]").val();
-                var razao = $("input[name=razao]").val();               
+                var razao = $("input[name=razao]").val();
                 var cep = $("input[name=cep]").val();
                 var endereco = $("input[name=endereco]").val();
                 var numero = $("input[name=numero]").val();
                 var bairro = $("input[name=bairro]").val();
                 var complemento = $("input[name=complemento]").val();
                 var cidade = $("input[name=cidade]").val();
-                var uf = $("input[name=uf]").val();                
+                var uf = $("input[name=uf]").val();
                 var email = $("input[name=email]").val();
                 var telefone = $("input[name=telefone]").val();
-                var ramo = $("input[name=ramo]").val();                
+                var ramo = $("input[name=ramo]").val();
 
 
                 $.ajax({
@@ -29,7 +31,7 @@
                     url:  "controler/incluir_cadastro.php",
                     data:{
                         cnpj: cnpj,
-                        razao: razao,                        
+                        razao: razao,
                         cep: cep,
                         endereco: endereco,
                         numero: numero,
@@ -40,7 +42,6 @@
                         email: email,
                         telefone: telefone,
                         ramo: ramo },
-						
                     success: function (response) {
                         $("div#retorno").html(response);
                     }
@@ -72,7 +73,7 @@
                         <div class="form-group col-md-4" style="margin: 0;">
                             <div class="form-group text-center">
                                 <label for="cnpj">CNPJ</label>
-                                <input type="text" class="form-control" maxlength="18" name="cnpj" id="cnpj" placeholder="" required>
+                                <input type="text" class="form-control" maxlength="14" name="cnpj" id="cnpj" placeholder="" required>
                             </div>
 
                         </div>
@@ -89,10 +90,10 @@
                             </div>
                         </div>
                     </div>
-					
+
 
                     <div class="row">
-                        <!-- <div class="col-md-42"> -->                       
+                        <!-- <div class="col-md-42"> -->
                         <div class="col-md-4">
                             <div class="form-group text-center responsavel">
                                 <label for="endereco">Endereço</label>
@@ -102,20 +103,20 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group text-center ">
-                                <label for="numero">Numero</label>
+                                <label for="numero">Número</label>
                                 <input type="text" class="form-control" maxlength="5" name="numero"  id="numero" required>
                             </div>
                         </div>
-                    <div class="col-md-4">
+                        <div class="col-md-4">
                             <div class="form-group text-center ">
                                 <label for="bairro">Bairro</label>
                                 <input type="text" class="form-control" maxlength="20" name="bairro" id="bairro" required>
                             </div>
                         </div>
-					</div>	
+                    </div>
 
-					
-					<div class="row">
+
+                    <div class="row">
                         <!-- <div class="col-md-42"> -->
                         <div class="col-md-4">
                             <div class="form-group text-center ">
@@ -127,54 +128,51 @@
                         <div class="col-md-4">
                             <div class="form-group text-center ">
                                 <label for="cidade">Cidade</label>
-                                <input type="text" maxlength="20" class="form-control" name="cidade" id="cidade" placeholder="" required>
+                                <input type="text" maxlength="30" class="form-control" name="cidade" id="cidade" placeholder="" required>
                             </div>
-                        </div>                  
-                    <div class="col-md-4">
+                        </div>
+                        <div class="col-md-4">
                             <div class="form-group text-center telefone">
                                 <label for="uf">UF</label>
                                 <input type="text" maxlength="2" id="uf" class="form-control" name="uf" required>
                             </div>
                         </div>
-					</div>
-					
-					
-					<div class="row">
+                    </div>
+
+
+                    <div class="row">
                         <div class="col-md-4">
                             <div class="form-group text-center telefone">
                                 <label for="email">E-mail</label>
                                 <input type="email" class="form-control" maxlength="40" name="email" id="email" placeholder="" required>
                             </div>
                         </div>
-						
-						<div class="col-md-4">
+
+                        <div class="col-md-4">
                             <div class="form-group text-center telefone">
                                 <label for="ramo">Ramo</label>
                                 <input type="text" maxlength="20" class="form-control" name="ramo" id="ramo" placeholder="" required>
                             </div>
                         </div>
-						
-						<div class="col-md-4">
+
+                        <div class="col-md-4">
                             <div class="form-group text-center">
                                 <label for="telefone">Telefone</label> <br>
                                 <input type="tel" class="form-control" maxlength="11" name="telefone" id="telefone" placeholder="" required>
                             </div>
                         </div>
-					</div>	
-                    
+                    </div>
                 </form>
             </div>
-			
-			
+
 
             <!--BUTTON SAVE FORM -->
             <div class="modal-footer">
                 <button type="button" value="btnCadastrar" class="btn btn-default" name="btnCadastrar"
                         id="btnCadastrar">Gravar</button>
-
                 <button type="button" class="btn btn-default" data-dismiss="modal" onclick="fechar_formulario()">Fechar</button>
             </div>
 
-            <div align="center" class="mensagem-erro" id="retorno">
 
+            <div align="center" class="mensagem-erro" id="retorno">
             </div>

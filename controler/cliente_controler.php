@@ -32,7 +32,6 @@ class cliente_controler{
             $Valores["status"]=$_POST["status"];
 
 
-
             $bd -> SetINSERT($Valores,"cliente");
 
             if(!$bd -> ExecINSERT()){

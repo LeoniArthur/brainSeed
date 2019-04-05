@@ -21,7 +21,7 @@ $ramo = $_REQUEST["ramo"];
 $ErroDados = FALSE;
 $MensagemErro = "";
 
-/*
+
 if(trim($cnpj) === ""){
     $ErroDados = TRUE;
     echo "<style>input[id=cnpj]{border-color: red;}</style>";
@@ -68,17 +68,14 @@ if(trim($uf) === ""){
     echo "<style>input[id=uf]{border-color: red;}</style>";
 }
 
-
 if(trim($email) === ""){
     $ErroDados = TRUE;
     echo "<style>input[id=email]{border-color: red;}</style>";
 }
-
 if(trim($telefone) === ""){
     $ErroDados = TRUE;
     echo "<style>input[id=telefone]{border-color: red;}</style>";
 }
-
 if(trim($ramo) === ""){
     $ErroDados = TRUE;
     echo "<style>input[id=ramo]{border-color: red;}</style>";
@@ -89,7 +86,6 @@ if($ErroDados == TRUE){
     echo"<script>alert('Campos em vermelho são obrigatórios!');</script>";
 }
 
-*/
 
 if(!$ErroDados){
 
@@ -99,7 +95,7 @@ if(!$ErroDados){
         echo "<h3>Erro na conexão com o banco!!<br>"
             .$conexao_bd->MensagemErro(). "</h3>";
     } else {
-		
+
         $Valores["cnpj"]= CampoTexto($cnpj);
         $Valores["razao"] = CampoTexto($razao);      
         $Valores["cep"] =CampoTexto($cep);
@@ -118,14 +114,11 @@ if(!$ErroDados){
 
         if(!$conexao_bd->ExecINSERT()){
 
-
             echo "<h4 class='mensagem-erro'>Erro ao inserir os dados!!</h4>";
 
         }else{
             echo "<script>alert('Dados inseridos com sucesso!');</script>";
             echo "<script>setTimeout(location.href = 'Cliente.php', 1000);</script>";
-
-            //echo "<script>$('.myModal').modal('hide');</script>";
         }
     }
 

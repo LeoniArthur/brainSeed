@@ -8,7 +8,7 @@
     <meta name="author" content="">
 
 
-    <title>SB Admin - Blank Page</title>
+    <title>Tabela de clientes</title>
     <!-- Bootstrap core CSS-->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -145,7 +145,7 @@
             </ol>
 
             <!-- Page Content -->
-            <h1>Clientes</h1>
+            <h1>Cadastro de clientes</h1>
             <hr>
             <script src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -183,6 +183,8 @@
 include ("controler/cliente_controler.php");
 ?>
 
+<br><br>
+
 <div class="card mb-3">
     <div class="card-header">
         <i class="fas fa-table"></i>
@@ -194,20 +196,20 @@ include ("controler/cliente_controler.php");
                 <tr>
                     <th>CNPJ</th>
                     <th>Razão</th>
-                    <th>Nome</th>
+                    <th>Ramo</th>
                     <th>Telefone</th>
                     <th>Status</th>
-                    <th>Options</th>
+                    <th>Ação</th>
                 </tr>
                 </thead>
                 <tfoot>
                 <tr>
                     <th>CNPJ</th>
                     <th>Razão</th>
-                    <th>Nome</th>
+                    <th>Ramo</th>
                     <th>Telefone</th>
                     <th>Status</th>
-                    <th>Options</th>
+                    <th>Ação</th>
                 </tr>
                 </tfoot>
                 <tbody>
@@ -221,12 +223,9 @@ include ("controler/cliente_controler.php");
                     echo "<tr>";
                     echo "<td>". $Registros["cnpj"] . "</td>";
                     echo "<td>". $Registros["razao"] . "</td>";
-                    echo "<td>". $Registros["nome"] . "</td>";
+                    echo "<td>". $Registros["ramo"] . "</td>";
                     echo "<td>". $Registros["telefone"] . "</td>";
                     echo "<td>". $Registros["status"] . "</td>";
-                    //   $_POST["cnpj"] = $Registros["cnpj"];
-                    //   include ('view/partial_Cliente.php');
-                    //include_once ("model/classBancoDados.php");
 
                     echo "<td><button type=\"button\" class=\"btn btn-info btn-lg\"
                 data-toggle='' value='' id='' name='' 
@@ -234,6 +233,8 @@ include ("controler/cliente_controler.php");
                     echo "</tr>";
                 }
                 ?>
+
+
                 </tbody>
             </table>
         </div>
@@ -266,6 +267,8 @@ include ("controler/cliente_controler.php");
         </div>
     </div>
 </div>
+
+
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- Core plugin JavaScript-->

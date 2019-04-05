@@ -27,7 +27,7 @@ class classBancoDados {
             $this->IdServidor = $Servidor;
         }
     }
- //Conexão do banco
+    //Conexão do banco
     //    // Métodos públicos
     public function AbrirConexao() {
         $this->ConexaoBanco = new mysqli($this->IdServidor,"seed","seed","brainseed_db");
@@ -56,7 +56,7 @@ class classBancoDados {
             return FALSE;
         }
 
-       return $this->ConexaoBanco->close();
+        return $this->ConexaoBanco->close();
     }
 
 
@@ -104,7 +104,6 @@ class classBancoDados {
     }
 
 
-
     public function SetINSERT($Valores,$Tabela = "") {
         if(($Tabela != "") && (count($Valores) > 0)) {
             $ListaCampos = "";
@@ -114,20 +113,18 @@ class classBancoDados {
                 $ListaCampos .= $Campo;
                 $ListaValores .= $Valor;
 
-                //$keys = array_keys($Valores);
-
                 if ($Campo != end(array_keys($Valores))) {
                     $ListaCampos .= ",";
                     $ListaValores .= ",";
                 }
             }
-
             $this->ComandoSQL = "INSERT INTO $Tabela($ListaCampos) VALUES($ListaValores)";
         }
     }
 
     public function ExecINSERT() {
         if($this->ComandoSQL != "") {
+
             $this->Resultado = $this->ConexaoBanco->query($this->ComandoSQL);
 
             if($this->Resultado == FALSE) {
@@ -138,7 +135,7 @@ class classBancoDados {
                     return FALSE;
                 }
                 else {
-                    echo $this->ComandoSQL;
+                    $this->ComandoSQL;
                     return TRUE;
                 }
             }
@@ -151,11 +148,12 @@ class classBancoDados {
     public function SetUPDATE($Valores,$Tabela = "") {
         if(($Tabela != "") && (count($Valores) > 0)) {
             $CamposValores = "";
+            $CamposValores = "";
 
             foreach($Valores as $Campo=>$Valor) {
                 $CamposValores .= $Campo." = ".$Valor;
 
-                if ($Campo !== end(array_keys($Valores))) {
+                if ($Campo != end(array_keys($Valores))) {
                     $CamposValores .= ",";
                 }
             }
