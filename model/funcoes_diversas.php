@@ -2,7 +2,6 @@
 
 require_once ("classBancoDados.php");
 
-
 //funcão para máscara de cpf, cnpj, data
 function mask($val, $mask)
 {
@@ -148,7 +147,6 @@ function RecuperaDados($CodigoUsuario){
 
                 $Cliente->setCnpj($Registros["cnpj"]);
                 $Cliente->setRazao($Registros["razao"]);
-                $Cliente->setNomeFantasia($Registros["nome_fantasia"]);
                 $Cliente->setCep($Registros["cep"]);
                 $Cliente->setEndereço($Registros["endereco"]);
                 $Cliente->setNumero($Registros["numero"]);
@@ -156,11 +154,9 @@ function RecuperaDados($CodigoUsuario){
                 $Cliente->setComplemento($Registros["complemento"]);
                 $Cliente->setCidade($Registros["cidade"]);
                 $Cliente->setUf($Registros["uf"]);
-                $Cliente->setContato($Registros["contato"]);
                 $Cliente->setEmail($Registros["email"]);
                 $Cliente->setTelefone($Registros["telefone"]);
                 $Cliente->setRamo($Registros["ramo"]);
-                $Cliente->setStatus($Registros["status"]);
             }
         } else{
             echo "<h2 class='mensagem-erro'>Erro na execução do comando select...</h2>";
