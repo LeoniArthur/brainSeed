@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="347ed812-4600-49bc-a7ea-4d3e70faabcc" name="Default" comment="" />
+    <list default="true" id="347ed812-4600-49bc-a7ea-4d3e70faabcc" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Produto.php" afterPath="$PROJECT_DIR$/Produto.php" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +44,21 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
       <PATH_ELEMENT>
-        <option name="myItemId" value="cliente" />
+        <option name="myItemId" value="produto" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="brainseed_db@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="brainseed_db" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
@@ -52,15 +69,18 @@
       <file leaf-file-name="partial_Cliente.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/partial_Cliente.php">
           <provider selected="true" editor-type-id="text-editor">
+
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+
       <file leaf-file-name="Cliente.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Cliente.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -69,11 +89,13 @@
               <folding>
                 <marker date="1554465546328" expanded="true" signature="8998:9158" ph="..." />
                 <marker date="1554465546328" expanded="true" signature="9052:9153" ph="..." />
+
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -137,6 +159,7 @@
         <option value="$PROJECT_DIR$/view/edit_Cliente.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/e854eeaf-90c4-46f9-ba6f-d50ac4598118/console.sql" />
         <option value="$PROJECT_DIR$/css/estilo.css" />
+
         <option value="$PROJECT_DIR$/index.html" />
         <option value="dbtable:/a79ee919/0842eb10-8a79-497d-b7c3-0284c3e60a61/brainseed_db.cliente" />
         <option value="$PROJECT_DIR$/model/funcoes_diversas.php" />
@@ -146,6 +169,7 @@
         <option value="$PROJECT_DIR$/model/classBancoDados.php" />
         <option value="$PROJECT_DIR$/controler/incluir_cadastro.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/0842eb10-8a79-497d-b7c3-0284c3e60a61/console.sql" />
+
       </list>
     </option>
   </component>
@@ -164,8 +188,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1620" />
+    <option name="height" value="920" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -274,14 +298,15 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Apache24/htdocs/brainSeed/model/classBancoDados.php&#10;cliente&#9;FILE&#9;file://C:/Apache24/htdocs/brainSeed/controler/cliente_controler.php" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Apache24\htdocs\SaLasProj\view" />
-      <recent name="C:\Apache24\htdocs\SaLasProj\js" />
-      <recent name="C:\Apache24\htdocs\SaLasProj\model" />
-      <recent name="C:\Users\Arthur\Desktop\SaLasProj\controler" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Arthur\Desktop\SaLasProj\controler" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Apache24\htdocs\brainSeed\view" />
+      <recent name="C:\Apache24\htdocs\brainSeed\controler" />
+      <recent name="C:\Apache24\htdocs\brainSeed" />
+      <recent name="C:\Apache24\htdocs\SaLasProj\view" />
+      <recent name="C:\Apache24\htdocs\SaLasProj\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -430,14 +455,17 @@
       <workItem from="1554387362561" duration="2445000" />
       <workItem from="1554395199159" duration="1071000" />
       <workItem from="1554398744252" duration="77000" />
+
       <workItem from="1554399006469" duration="8297000" />
       <workItem from="1554463271703" duration="7268000" />
       <workItem from="1554473360546" duration="29000" />
       <workItem from="1554484179874" duration="4024000" />
+
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+
     <option name="totallyTimeSpent" value="150904000" />
   </component>
   <component name="TodoView">
@@ -460,16 +488,22 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.567714" sideWeight="0.5021322" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20842217" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47453955" sideWeight="0.4978678" order="9" side_tool="false" content_ui="tabs" />
+
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43228602" sideWeight="0.4978678" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.65005416" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39869988" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -512,14 +546,6 @@
               <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
                 <collection />
               </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
             </State>
           </value>
         </entry>
@@ -550,6 +576,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+
     <entry file="file://$PROJECT_DIR$/model/cliente.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -585,6 +612,7 @@
         </state>
       </provider>
     </entry>
+
     <entry file="file://$PROJECT_DIR$/controler/cliente_controler.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1139">
@@ -735,6 +763,7 @@
     <entry file="file://$PROJECT_DIR$/view/edit_Cliente.php" />
     <entry file="dbDummy://dbtable:/ad64165f/e854eeaf-90c4-46f9-ba6f-d50ac4598118/nossobel_proj.cliente" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e854eeaf-90c4-46f9-ba6f-d50ac4598118/console.sql" />
+
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -761,18 +790,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3696">
           <caret line="168" column="20" lean-forward="true" selection-start-line="168" selection-start-column="20" selection-end-line="168" selection-end-column="20" />
+
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/cliente.php">
+    <entry file="file://$PROJECT_DIR$/model/classBancoDados.php">
       <provider selected="true" editor-type-id="text-editor">
+
         <state relative-caret-position="1958">
           <caret line="89" column="5" lean-forward="true" selection-start-line="89" selection-start-column="5" selection-end-line="89" selection-end-column="5" />
+
           <folding />
         </state>
       </provider>
     </entry>
+
     <entry file="file://$PROJECT_DIR$/css/estilo.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -795,18 +828,52 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2464">
           <caret line="112" column="52" lean-forward="true" selection-start-line="112" selection-start-column="52" selection-end-line="112" selection-end-column="52" />
+
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/0842eb10-8a79-497d-b7c3-0284c3e60a61/console.sql">
+    <entry file="file://$PROJECT_DIR$/model/cliente.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="272">
+          <caret line="16" column="21" lean-forward="false" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/model/produto.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controler/produto_controler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="45" column="41" lean-forward="false" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1071">
+          <caret line="63" column="43" lean-forward="false" selection-start-line="63" selection-start-column="43" selection-end-line="63" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2380">
+          <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+
     <entry file="dbDummy://dbtable:/a79ee919/0842eb10-8a79-497d-b7c3-0284c3e60a61/brainseed_db.cliente">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -816,24 +883,29 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="25" lean-forward="true" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="25" />
+
           <folding />
         </state>
       </provider>
     </entry>
+
     <entry file="file://$PROJECT_DIR$/view/partial_Cliente.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+
           </folding>
         </state>
       </provider>
     </entry>
+
     <entry file="file://$PROJECT_DIR$/controler/cliente_controler.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1021">
           <caret line="57" column="28" lean-forward="true" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
+
           <folding />
         </state>
       </provider>
