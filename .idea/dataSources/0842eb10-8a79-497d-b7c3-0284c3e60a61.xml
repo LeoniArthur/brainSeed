@@ -108,13 +108,13 @@
       <DataType>float|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="29" parent="9" name="valor__venda">
-      <Position>5</Position>
-      <DataType>float|0</DataType>
-    </column>
-    <column id="30" parent="9" name="imagem">
+    <column id="29" parent="9" name="imagem">
       <Position>6</Position>
       <DataType>mediumblob|0</DataType>
+    </column>
+    <column id="30" parent="9" name="valor_venda">
+      <Position>5</Position>
+      <DataType>float|0</DataType>
     </column>
     <key id="31" parent="9" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>

@@ -3,7 +3,7 @@
 require_once ("/Apache24/htdocs/brainSeed/model/classBancoDados.php");
 
 
-class cliente_controler{
+class produto_controler{
 
     function Insert(){
 
