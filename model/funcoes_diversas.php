@@ -114,7 +114,6 @@ function ValidaCEP($CEP) {
     else {
         $Retorno = ereg("^([0-9]){5}-?([0-9]){3}$",$CEP);
     }
-
     return $Retorno;
 }
 
@@ -133,7 +132,6 @@ function RecuperaDados($CodigoUsuario){
         echo $conexao_bd->CodigoErro() ." -> " .$conexao_bd->MensagemErro();
 
     } else{
-
         $conexao_bd->SetSELECT("*", "cliente");
         $conexao_bd->SetWHERE("id = $CodigoUsuario");
 
@@ -163,10 +161,8 @@ function RecuperaDados($CodigoUsuario){
         }
 
     }
-
     $conexao_bd->FecharConexao();
 
     return $Cliente;
-
 }
 

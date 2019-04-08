@@ -1,4 +1,17 @@
+<?php
 
+require_once ("C:/Apache24/htdocs/brainSeed/model/classBancoDados.php");
+require_once ("C:/Apache24/htdocs/brainSeed/model/cliente.php");
+require_once ("C:/Apache24/htdocs/brainSeed/model/funcoes_diversas.php");
+
+
+$CodigoUsuario = $_GET["CodigoUsuario"];
+$DadosUsuario = new cliente();
+$DadosUsuario = RecuperaDados($CodigoUsuario);
+
+
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -10,8 +23,12 @@
     <script>
         $(document).ready(function () {
 
-            $("#btnCadastrar").click(function() {
+            $("#btnEditar").click(function() {
 
+                var id = $(this).val();
+
+                print var id = $(this).val();
+                print (id);
                 var codigo_usuario = $("input[name=CodigoUsuario]").val();
                 var cnpj = $("input[name=cnpj]").val();
                 var razao = $("input[name=razao]").val();
@@ -29,8 +46,9 @@
 
                 $.ajax({
                     dataType: "html",
-                    url:  "controler/incluir_cadastro.php",
+                    url:  "controler/gravar_usuario.php",
                     data:{
+                        id: id,
                         CodigoUsuario: codigo_usuario,
                         cnpj: cnpj,
                         razao: razao,
@@ -74,21 +92,28 @@
                         <!-- <div class="col-md-42"> -->
                         <div class="form-group col-md-4" style="margin: 0;">
                             <div class="form-group text-center">
+
+                                <!-- CODIGO USUÁRIO -->
+                                <input name="CodigoUsuario" value="<?=$CodigoUsuario;?>" type="hidden">
+
                                 <label for="cnpj">CNPJ</label>
-                                <input type="text" class="form-control" maxlength="14" name="cnpj" id="cnpj" placeholder="" required>
+                                <input value="<?=$DadosUsuario->getCnpj();?>" type="text" class="form-control"
+                                       maxlength="14" name="cnpj" id="cnpj" placeholder="" required>
                             </div>
 
                         </div>
                         <div class="col-md-4">
                             <div class="form-group text-center razao-validate">
                                 <label for="razao">Razão</label>
-                                <input type="text" class="form-control" maxlength="40" name="razao" id="razao"  placeholder="" required>
+                                <input value="<?=$DadosUsuario->getRazao();?>" type="text" class="form-control"
+                                       maxlength="40" name="razao" id="razao"  placeholder="" required>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group text-center responsavel">
                                 <label for="cep">CEP</label>
-                                <input type="text" class="form-control" name="cep" id="cep"  placeholder="" maxlength="9" required>
+                                <input value="<?=$DadosUsuario->getCep();?>" type="text" class="form-control"
+                                       name="cep" id="cep"  placeholder="" maxlength="9" required>
                             </div>
                         </div>
                     </div>
@@ -99,20 +124,22 @@
                         <div class="col-md-4">
                             <div class="form-group text-center responsavel">
                                 <label for="endereco">Endereço</label>
-                                <input type="text" class="form-control" name="endereco"
+                                <input value="<?=$DadosUsuario->getEndereço();?>" type="text" class="form-control" name="endereco"
                                        maxlength="40" id="endereco"  placeholder="" required>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group text-center ">
                                 <label for="numero">Número</label>
-                                <input type="text" class="form-control" maxlength="5" name="numero"  id="numero" required>
+                                <input value="<?=$DadosUsuario->getNumero();?>" type="text" class="form-control"
+                                       maxlength="5" name="numero"  id="numero" required>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group text-center ">
                                 <label for="bairro">Bairro</label>
-                                <input type="text" class="form-control" maxlength="20" name="bairro" id="bairro" required>
+                                <input value="<?=$DadosUsuario->getBairro();?>" type="text" class="form-control"
+                                       maxlength="20" name="bairro" id="bairro" required>
                             </div>
                         </div>
                     </div>
@@ -123,20 +150,22 @@
                         <div class="col-md-4">
                             <div class="form-group text-center ">
                                 <label for="complemento">Complemento</label>
-                                <input type="text" class="form-control" name="complemento"
+                                <input value="<?=$DadosUsuario->getComplemento();?>" type="text" class="form-control" name="complemento"
                                        maxlength="20" id="complemento" placeholder="" required>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group text-center ">
                                 <label for="cidade">Cidade</label>
-                                <input type="text" maxlength="30" class="form-control" name="cidade" id="cidade" placeholder="" required>
+                                <input value="<?=$DadosUsuario->getCidade();?>" type="text" maxlength="30" class="form-control"
+                                       name="cidade" id="cidade" placeholder="" required>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group text-center telefone">
                                 <label for="uf">UF</label>
-                                <input type="text" maxlength="2" id="uf" class="form-control" name="uf" required>
+                                <input value="<?=$DadosUsuario->getUf();?>" type="text" maxlength="2" id="uf"
+                                       class="form-control" name="uf" required>
                             </div>
                         </div>
                     </div>
@@ -146,21 +175,24 @@
                         <div class="col-md-4">
                             <div class="form-group text-center telefone">
                                 <label for="email">E-mail</label>
-                                <input type="email" class="form-control" maxlength="40" name="email" id="email" placeholder="" required>
+                                <input value="<?=$DadosUsuario->getEmail();?>" type="email" class="form-control"
+                                       maxlength="40" name="email" id="email" placeholder="" required>
                             </div>
                         </div>
 
                         <div class="col-md-4">
                             <div class="form-group text-center telefone">
                                 <label for="ramo">Ramo</label>
-                                <input type="text" maxlength="20" class="form-control" name="ramo" id="ramo" placeholder="" required>
+                                <input value="<?=$DadosUsuario->getRamo();?>" type="text" maxlength="20" class="form-control"
+                                       name="ramo" id="ramo" placeholder="" required>
                             </div>
                         </div>
 
                         <div class="col-md-4">
                             <div class="form-group text-center">
                                 <label for="telefone">Telefone</label> <br>
-                                <input type="tel" class="form-control" maxlength="11" name="telefone" id="telefone" placeholder="" required>
+                                <input value="<?=$DadosUsuario->getTelefone();?>" type="tel" class="form-control"
+                                       maxlength="11" name="telefone" id="telefone" placeholder="" required>
                             </div>
                         </div>
                     </div>
@@ -171,7 +203,7 @@
             <!--BUTTON SAVE FORM -->
             <div class="modal-footer">
                 <button type="button" value="btnCadastrar" class="btn btn-default" name="btnCadastrar"
-                        id="btnCadastrar">Gravar</button>
+                        id="btnEditar">Gravar</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal" onclick="fechar_formulario()">Fechar</button>
             </div>
 

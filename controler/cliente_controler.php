@@ -14,7 +14,6 @@ class cliente_controler{
         if(!$bd->AbrirConexao()){
             echo "<h3>Erro na conexão com o banco!!<br>".$bd->MensagemErro()."</h3>";
         }else{
-
             $Valores["cnpj"]=$_POST["cnpj"];
             $Valores["razao"] =$_POST["razao"];
             $Valores["nome_fantasia"]=$_POST["nome_fantasia"];

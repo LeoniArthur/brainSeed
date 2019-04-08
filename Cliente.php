@@ -7,17 +7,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-
     <title>Tabela de clientes</title>
     <!-- Bootstrap core CSS-->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-
     <!-- Page level plugin CSS-->
     <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
-
     <!-- Custom styles for this template-->
     <link href="css/sb-admin.css" rel="stylesheet">
 
@@ -26,8 +22,14 @@
         function fechar_formulario() {
             location.href="Cliente.php";
         }
-
     </script>
+
+    <script language="JavaScript">
+        function abrirFormulario() {
+          location.href="/view/edit_Cliente.php";
+        }
+    </script>
+
 
 </head>
 
@@ -159,7 +161,6 @@
             <button type="button" class="btn btn-info btn-lg" data-toggle="modal"
                     data-target="#myModal" name="cadastrar" value="cadastrar">Cadastrar</button>
 
-					
             <?php
             include ("view/partial_Cliente.php");
             ?>
@@ -220,6 +221,8 @@ include ("controler/cliente_controler.php");
                 $DataSet= $Select_cliente -> Select_cliente();
                 while($Registros = $DataSet->fetch_assoc()) {
 
+                    $Pagina = "gravar_usuario.php?CodigoUsuario=".$Registros["id"];
+                    $id = $Registros["id"];
                     echo "<tr>";
                     echo "<td>". $Registros["cnpj"] . "</td>";
                     echo "<td>". $Registros["razao"] . "</td>";
@@ -228,8 +231,8 @@ include ("controler/cliente_controler.php");
                     echo "<td>". $Registros["status"] . "</td>";
 
                     echo "<td><button type=\"button\" class=\"btn btn-info btn-lg\"
-                data-toggle='' value='' id='' name='' 
-                data-target=''>Editar</button></td>";
+                        value=$id; id=\"btnEditar\" data-target=\"#myModal\" data-toggle=\"modal\">Editar</button> </td>";
+                    echo $Registros["id"];
                     echo "</tr>";
                 }
                 ?>
