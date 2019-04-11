@@ -1,5 +1,14 @@
 
 
+<?php
+
+
+require_once ("C:/Apache24/htdocs/brainSeed/model/classBancoDados.php");
+require_once ("C:/Apache24/htdocs/brainSeed/model/cliente.php");
+
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,57 +18,31 @@
 
     <script>
 
-
-
         $(document).ready(function () {
-
-
-
-
 
             $(".btnEditar").click(function() {
 
                 var id = $(this).attr('value');
 
+                $.ajax({
+                    type      : 'post',
+                    url       : ,
+                    data      :  {id: id},
 
-
-
-                alert(id);
-
-
-               <?php
-
-
-                //$DadosUsuario = new cliente();
-                $id = echo "<script>document.write(id)</script>";
-
-
-              //  $DadosUsuario = RecuperaDados();
-
-
-
-                ?>
-
-
-
-
-
+                    success: function (id) {
+                        $('#').html(id);
+                    },
+                    error: function(){
+                        alert('Falha!');
+                    }
+                });
 
             });
         });
+        }
 
 
-
-
-
-
-
-
-
-
-
-
-      //-------------------------------------------------------------
+        //-------------------------------------------------------------
         $(document).ready(function () {
 
             $("#btnCadastrar").click(function() {
@@ -122,12 +105,12 @@
 
                 <form action="" method="post">
 
-                        <div class="row">
+                    <div class="row">
                         <!-- <div class="col-md-42"> -->
                         <div class="form-group col-md-4" style="margin: 0;">
                             <div class="form-group text-center">
                                 <label for="cnpj">CNPJ</label>
-                                <input type="text" class="form-control" maxlength="14" name="cnpj" id="cnpj" placeholder="<?php echo $id; ?>" required>
+                                <input type="text" class="form-control" maxlength="14" name="cnpj" id="cnpj" value="<?php echo $CodigoUsuario; ?>" placeholder="" required>
                             </div>
 
                         </div>
