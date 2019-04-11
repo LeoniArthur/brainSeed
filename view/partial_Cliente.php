@@ -8,6 +8,58 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
     <script>
+
+
+
+        $(document).ready(function () {
+
+
+
+
+
+            $(".btnEditar").click(function() {
+
+                var id = $(this).attr('value');
+
+
+
+
+                alert(id);
+
+
+               <?php
+
+
+                //$DadosUsuario = new cliente();
+                $id = echo "<script>document.write(id)</script>";
+
+
+              //  $DadosUsuario = RecuperaDados();
+
+
+
+                ?>
+
+
+
+
+
+
+            });
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+      //-------------------------------------------------------------
         $(document).ready(function () {
 
             $("#btnCadastrar").click(function() {
@@ -70,19 +122,19 @@
 
                 <form action="" method="post">
 
-                    <div class="row">
+                        <div class="row">
                         <!-- <div class="col-md-42"> -->
                         <div class="form-group col-md-4" style="margin: 0;">
                             <div class="form-group text-center">
                                 <label for="cnpj">CNPJ</label>
-                                <input type="text" class="form-control" maxlength="14" name="cnpj" id="cnpj" placeholder="" required>
+                                <input type="text" class="form-control" maxlength="14" name="cnpj" id="cnpj" placeholder="<?php echo $id; ?>" required>
                             </div>
 
                         </div>
                         <div class="col-md-4">
                             <div class="form-group text-center razao-validate">
                                 <label for="razao">Razão</label>
-                                <input type="text" class="form-control" maxlength="40" name="razao" id="razao"  placeholder="" required>
+                                <input type="text" class="form-control" maxlength="40" name="razao" id="razao"  placeholder="Arthur" required>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -92,7 +144,6 @@
                             </div>
                         </div>
                     </div>
-
 
                     <div class="row">
                         <!-- <div class="col-md-42"> -->
@@ -172,6 +223,8 @@
             <div class="modal-footer">
                 <button type="button" value="btnCadastrar" class="btn btn-default" name="btnCadastrar"
                         id="btnCadastrar">Gravar</button>
+                <button type="button" value="btnEditar" class="btn btn-default" name="btnEditar"
+                        id="btnEditar">edit</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal" onclick="fechar_formulario()">Fechar</button>
             </div>
 

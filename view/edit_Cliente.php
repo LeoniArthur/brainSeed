@@ -3,11 +3,11 @@
 require_once ("C:/Apache24/htdocs/brainSeed/model/classBancoDados.php");
 require_once ("C:/Apache24/htdocs/brainSeed/model/cliente.php");
 require_once ("C:/Apache24/htdocs/brainSeed/model/funcoes_diversas.php");
-
-
 $CodigoUsuario = $_GET["CodigoUsuario"];
 $DadosUsuario = new cliente();
 $DadosUsuario = RecuperaDados($CodigoUsuario);
+
+
 
 
 

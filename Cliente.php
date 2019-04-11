@@ -159,7 +159,7 @@
 
             <!-- CADASTRAR -->
             <button type="button" class="btn btn-info btn-lg" data-toggle="modal"
-                    data-target="#myModal" name="cadastrar" value="cadastrar">Cadastrar</button>
+                    data-target="#myModal" name="cadastrar" value="">Cadastrar</button>
 
             <?php
             include ("view/partial_Cliente.php");
@@ -183,6 +183,8 @@
 <?php
 include ("controler/cliente_controler.php");
 ?>
+
+
 
 <br><br>
 
@@ -221,17 +223,18 @@ include ("controler/cliente_controler.php");
                 $DataSet= $Select_cliente -> Select_cliente();
                 while($Registros = $DataSet->fetch_assoc()) {
 
-                    $Pagina = "gravar_usuario.php?CodigoUsuario=".$Registros["id"];
                     $id = $Registros["id"];
+
                     echo "<tr>";
                     echo "<td>". $Registros["cnpj"] . "</td>";
                     echo "<td>". $Registros["razao"] . "</td>";
                     echo "<td>". $Registros["ramo"] . "</td>";
                     echo "<td>". $Registros["telefone"] . "</td>";
-                    echo "<td>". $Registros["status"] . "</td>";
+                    echo "<td>". $Registros["id"] . "</td>";
 
-                    echo "<td><button type=\"button\" class=\"btn btn-info btn-lg\"
-                        value=$id; id=\"btnEditar\" data-target=\"#myModal\" data-toggle=\"modal\">Editar</button> </td>";
+                    echo "<td><button type=\"button\" class=\"btnEditar btn btn-info btn-lg\"
+                        value=$id;  data-target=\"#myModal\" data-toggle=\"modal\">Editar</button> </td>";
+
                     echo $Registros["id"];
                     echo "</tr>";
                 }
