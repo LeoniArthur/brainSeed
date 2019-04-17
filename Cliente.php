@@ -23,12 +23,14 @@
             location.href="Cliente.php";
         }
     </script>
-
-    <script language="JavaScript">
-        function abrirFormulario() {
-          location.href="/view/edit_Cliente.php";
-        }
-    </script>
+	
+	<script> function carregar(pagina){$(".btnEditar btn btn-info btn-lg").load(pagina);}</script>
+	
+	<script language="JavaScript">
+		function show(){
+			
+		}
+		</script>
 
 
 </head>
@@ -164,7 +166,6 @@
             <?php
             include ("view/partial_Cliente.php");
             ?>
-
             <!--
             <div class="modal-footer">
                 <button type="button" value="btnCadastrar" class="btn btn-default" name="btnCadastrar"
@@ -172,18 +173,11 @@
 
                 <button type="button" class="btn btn-default" data-dismiss="modal" onclick="fechar_formulario()">Fechar</button>
             </div>
-
             -->
         </div>
     </div>
 </div>
 </html>
-
-
-<?php
-include ("controler/cliente_controler.php");
-?>
-
 
 
 <br><br>
@@ -201,7 +195,7 @@ include ("controler/cliente_controler.php");
                     <th>Razão</th>
                     <th>Ramo</th>
                     <th>Telefone</th>
-                    <th>Status</th>
+					<th>ID</th>					
                     <th>Ação</th>
                 </tr>
                 </thead>
@@ -210,20 +204,20 @@ include ("controler/cliente_controler.php");
                     <th>CNPJ</th>
                     <th>Razão</th>
                     <th>Ramo</th>
-                    <th>Telefone</th>
-                    <th>Status</th>
+                    <th>Telefone</th>     
+					<th>ID</th> 					
                     <th>Ação</th>
                 </tr>
                 </tfoot>
                 <tbody>
 
-                <?php
 
+                <?php
                 $Select_cliente = new cliente_controler();
                 $DataSet= $Select_cliente -> Select_cliente();
                 while($Registros = $DataSet->fetch_assoc()) {
 
-                    $id = $Registros["id"];
+                    $Pagina = "partial_Cliente.php?CodigoUsuario=".$Registros["id"];
 
                     echo "<tr>";
                     echo "<td>". $Registros["cnpj"] . "</td>";
@@ -233,13 +227,11 @@ include ("controler/cliente_controler.php");
                     echo "<td>". $Registros["id"] . "</td>";
 
                     echo "<td><button type=\"button\" class=\"btnEditar btn btn-info btn-lg\"
-                        value=$id;  data-target=\"#myModal\" data-toggle=\"modal\">Editar</button> </td>";
+                        value=\"\" id=\"btnEditar\" data-target=\"#myModal\" data-toggle=\"modal\" onclick=\"carregar($Pagina);\">Editar</button></td>";
 
-                    echo $Registros["id"];
                     echo "</tr>";
                 }
                 ?>
-
 
                 </tbody>
             </table>

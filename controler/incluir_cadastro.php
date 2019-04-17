@@ -1,7 +1,6 @@
 <?php
 
 require_once ("/Apache24/htdocs/brainSeed/model/classBancoDados.php");
-require_once ("/Apache24/htdocs/brainSeed/model/funcoes_diversas.php");
 
 
 $cnpj = $_REQUEST["cnpj"];
@@ -95,7 +94,6 @@ if(!$ErroDados){
         echo "<h3>Erro na conexão com o banco!!<br>"
             .$conexao_bd->MensagemErro(). "</h3>";
     } else {
-
         $Valores["cnpj"]= CampoTexto($cnpj);
         $Valores["razao"] = CampoTexto($razao);      
         $Valores["cep"] =CampoTexto($cep);

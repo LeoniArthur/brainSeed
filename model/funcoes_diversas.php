@@ -98,7 +98,7 @@ function ValidaCPF($NumeroCPF){
     return $Retorno;
 }
 
-
+//PEGAR VALORES
 function CampoTexto($Valor) {
     return "'".$Valor."'";
 }
@@ -118,9 +118,8 @@ function ValidaCEP($CEP) {
 }
 
 
+
 //FUNÇÃO PARA RECUPERAR OS DADOS DO CADASTRO
-
-
 function Recuperar_Dados($CodigoUsuario){
     $Cliente = new cliente();
 
@@ -159,7 +158,6 @@ function Recuperar_Dados($CodigoUsuario){
         } else{
             echo "<h2 class='mensagem-erro'>Erro na execução do comando select...</h2>";
         }
-
     }
     $conexao_bd->FecharConexao();
 

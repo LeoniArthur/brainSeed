@@ -1,53 +1,30 @@
-
-
 <?php
-
 
 require_once ("C:/Apache24/htdocs/brainSeed/model/classBancoDados.php");
 require_once ("C:/Apache24/htdocs/brainSeed/model/cliente.php");
+require_once ("C:/Apache24/htdocs/brainSeed/controler/cliente_controler.php");
+require_once ("C:/Apache24/htdocs/brainSeed/model/funcoes_diversas.php");
 
-
-
+$CodigoUsuario = $_GET["CodigoUsuario"];
+$DadosUsuario = new cliente();
+$DadosUsuario = Recuperar_Dados($CodigoUsuario);
 ?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/../brainSeed/css/estilo.css">
 
     <script>
-
-        $(document).ready(function () {
-
-            $(".btnEditar").click(function() {
-
-                var id = $(this).attr('value');
-
-                $.ajax({
-                    type      : 'post',
-                    url       : ,
-                    data      :  {id: id},
-
-                    success: function (id) {
-                        $('#').html(id);
-                    },
-                    error: function(){
-                        alert('Falha!');
-                    }
-                });
-
-            });
-        });
-        }
-
-
-        //-------------------------------------------------------------
+       
         $(document).ready(function () {
 
             $("#btnCadastrar").click(function() {
-
-                var codigo_usuario = $("input[name=CodigoUsuario]").val();
+              
                 var cnpj = $("input[name=cnpj]").val();
                 var razao = $("input[name=razao]").val();
                 var cep = $("input[name=cep]").val();
@@ -86,8 +63,53 @@ require_once ("C:/Apache24/htdocs/brainSeed/model/cliente.php");
             });
         });
     </script>
+	
+	<!--EDITAR-->
+	<script>
+       
+        $(document).ready(function () {
 
-    <link rel="stylesheet" type="text/css" href="/../brainSeed/css/estilo.css"
+            $(".btnEditar btn btn-info btn-lg").click(function() {
+
+                var codigo_usuario = $("input[name=CodigoUsuario]").val();
+                var cnpj = $("input[name=cnpj]").val();
+                var razao = $("input[name=razao]").val();
+                var cep = $("input[name=cep]").val();
+                var endereco = $("input[name=endereco]").val();
+                var numero = $("input[name=numero]").val();
+                var bairro = $("input[name=bairro]").val();
+                var complemento = $("input[name=complemento]").val();
+                var cidade = $("input[name=cidade]").val();
+                var uf = $("input[name=uf]").val();
+                var email = $("input[name=email]").val();
+                var telefone = $("input[name=telefone]").val();
+                var ramo = $("input[name=ramo]").val();
+
+
+                $.ajax({
+                    dataType: "html",
+                    url:  "controler/gravar_usuario.php",
+                    data:{
+                        CodigoUsuario: codigo_usuario,
+                        cnpj: cnpj,
+                        razao: razao,
+                        cep: cep,
+                        endereco: endereco,
+                        numero: numero,
+                        bairro: bairro,
+                        complemento: complemento,
+                        cidade: cidade,
+                        uf: uf,
+                        email: email,
+                        telefone: telefone,
+                        ramo: ramo },
+                    success: function (response) {
+                        $("div#retorno").html(response);
+                    }
+                });
+            });
+        });
+    </script>
 
 </head>
 
@@ -109,15 +131,22 @@ require_once ("C:/Apache24/htdocs/brainSeed/model/cliente.php");
                         <!-- <div class="col-md-42"> -->
                         <div class="form-group col-md-4" style="margin: 0;">
                             <div class="form-group text-center">
+
+                                <!-- CODIGO USUÁRIO -->
+								<?php if ($CodigoUsuario != ""){?>
+                                <input name="CodigoUsuario" value="<?=$CodigoUsuario;?>" type="hidden">
+
+								
                                 <label for="cnpj">CNPJ</label>
-                                <input type="text" class="form-control" maxlength="14" name="cnpj" id="cnpj" value="<?php echo $CodigoUsuario; ?>" placeholder="" required>
+                                <input type="text" class="form-control" maxlength="14" name="cnpj" id="cnpj"
+                                       value="" placeholder="" required>
                             </div>
 
                         </div>
                         <div class="col-md-4">
                             <div class="form-group text-center razao-validate">
                                 <label for="razao">Razão</label>
-                                <input type="text" class="form-control" maxlength="40" name="razao" id="razao"  placeholder="Arthur" required>
+                                <input type="text" class="form-control" maxlength="40" name="razao" id="razao"  placeholder="" required>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -200,14 +229,18 @@ require_once ("C:/Apache24/htdocs/brainSeed/model/cliente.php");
                     </div>
                 </form>
             </div>
+			
+					<?php }?>
 
 
             <!--BUTTON SAVE FORM -->
             <div class="modal-footer">
                 <button type="button" value="btnCadastrar" class="btn btn-default" name="btnCadastrar"
                         id="btnCadastrar">Gravar</button>
-                <button type="button" value="btnEditar" class="btn btn-default" name="btnEditar"
-                        id="btnEditar">edit</button>
+
+                <!--<button type="button" value="btnEditar" class="btn btn-default" name="btnEditar"
+                        id="btnEditar">edit</button>-->
+
                 <button type="button" class="btn btn-default" data-dismiss="modal" onclick="fechar_formulario()">Fechar</button>
             </div>
 

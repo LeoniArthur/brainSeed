@@ -2,14 +2,12 @@
 
 require_once ("/Apache24/htdocs/brainSeed/model/classBancoDados.php");
 
-
 class cliente_controler{
-
+    /*
     function Insert(){
 
         $ServidorMySQL = "localhost";
         $bd = new classBancoDados($ServidorMySQL);
-
 
         if(!$bd->AbrirConexao()){
             echo "<h3>Erro na conexão com o banco!!<br>".$bd->MensagemErro()."</h3>";
@@ -37,14 +35,12 @@ class cliente_controler{
                 echo "<h3>Erro na inserção !!</h3>";
             }else{
                 echo "<h3>Inserido!<br>";
-                $bd -> FecharConexao();
             }
-
         }
-    }
+        $bd -> FecharConexao();
+    }*/
 
     function Select_cliente(){
-
         $ServidorMySQL = "localhost";
         $bd = new classBancoDados($ServidorMySQL);
         if(!$bd->AbrirConexao()){
@@ -56,10 +52,9 @@ class cliente_controler{
 
             return $DataSet;
         }
-        return FALSE;
+
+        $bd->FecharConexao();
+
+        return false;
     }
-
-
-
-
 }
