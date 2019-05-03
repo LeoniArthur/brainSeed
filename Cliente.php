@@ -165,16 +165,21 @@
 
             <?php
             include ("view/partial_Cliente.php");
+
+            require_once('model/url_request.php');
+            $clientes =  get_req('https://projav.000webhostapp.com/ws_seed/Webservice.php?a=selectClientes');
+            $clientes = explode(";", $clientes);
+
             ?>
-            <!--
+
             <div class="modal-footer">
                 <button type="button" value="btnCadastrar" class="btn btn-default" name="btnCadastrar"
                         id="btnCadastrar">Gravar</button>
 
                 <button type="button" class="btn btn-default" data-dismiss="modal" onclick="fechar_formulario()">Fechar</button>
             </div>
-            -->
-        </div>
+
+       </div>
     </div>
 </div>
 </html>
@@ -210,25 +215,21 @@
                 </tr>
                 </tfoot>
                 <tbody>
-
-
                 <?php
-                $Select_cliente = new cliente_controler();
-                $DataSet= $Select_cliente -> Select_cliente();
-                while($Registros = $DataSet->fetch_assoc()) {
 
-                    $Pagina = "partial_Cliente.php?CodigoUsuario=".$Registros["id"];
+                $count = 0;
+                error_reporting(0);
+                while($count <=  count($clientes, COUNT_RECURSIVE)-14) {
 
                     echo "<tr>";
-                    echo "<td>". $Registros["cnpj"] . "</td>";
-                    echo "<td>". $Registros["razao"] . "</td>";
-                    echo "<td>". $Registros["ramo"] . "</td>";
-                    echo "<td>". $Registros["telefone"] . "</td>";
-                    echo "<td>". $Registros["id"] . "</td>";
-
+                    echo "<td>". $clientes[$count+1] . "</td>";
+                    echo "<td>". $clientes[$count+2] . "</td>";
+                    echo "<td>". $clientes[$count+12]. "</td>";
+                    echo "<td>". $clientes[$count+11] . "</td>";
+                    echo "<td>". $clientes[$count+0] . "</td>";
+                    $count = $count+14;
                     echo "<td><button type=\"button\" class=\"btnEditar btn btn-info btn-lg\"
-                        value=\"\" id=\"btnEditar\" data-target=\"#myModal\" data-toggle=\"modal\" onclick=\"carregar($Pagina);\">Editar</button></td>";
-
+                       value=\"\" id=\"btnEditar\" data-target=\"#myModal\" data-toggle=\"modal\" onclick=\"\">Editar</button></td>";
                     echo "</tr>";
                 }
                 ?>

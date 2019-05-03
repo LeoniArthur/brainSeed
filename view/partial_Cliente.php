@@ -1,13 +1,9 @@
 <?php
 
-require_once ("C:/Apache24/htdocs/brainSeed/model/classBancoDados.php");
 require_once ("C:/Apache24/htdocs/brainSeed/model/cliente.php");
 require_once ("C:/Apache24/htdocs/brainSeed/controler/cliente_controler.php");
 require_once ("C:/Apache24/htdocs/brainSeed/model/funcoes_diversas.php");
 
-$CodigoUsuario = $_GET["CodigoUsuario"];
-$DadosUsuario = new cliente();
-$DadosUsuario = Recuperar_Dados($CodigoUsuario);
 ?>
 
 
@@ -20,95 +16,8 @@ $DadosUsuario = Recuperar_Dados($CodigoUsuario);
     <link rel="stylesheet" type="text/css" href="/../brainSeed/css/estilo.css">
 
     <script>
-       
-        $(document).ready(function () {
-
-            $("#btnCadastrar").click(function() {
-              
-                var cnpj = $("input[name=cnpj]").val();
-                var razao = $("input[name=razao]").val();
-                var cep = $("input[name=cep]").val();
-                var endereco = $("input[name=endereco]").val();
-                var numero = $("input[name=numero]").val();
-                var bairro = $("input[name=bairro]").val();
-                var complemento = $("input[name=complemento]").val();
-                var cidade = $("input[name=cidade]").val();
-                var uf = $("input[name=uf]").val();
-                var email = $("input[name=email]").val();
-                var telefone = $("input[name=telefone]").val();
-                var ramo = $("input[name=ramo]").val();
 
 
-                $.ajax({
-                    dataType: "html",
-                    url:  "controler/incluir_cadastro.php",
-                    data:{
-                        CodigoUsuario: codigo_usuario,
-                        cnpj: cnpj,
-                        razao: razao,
-                        cep: cep,
-                        endereco: endereco,
-                        numero: numero,
-                        bairro: bairro,
-                        complemento: complemento,
-                        cidade: cidade,
-                        uf: uf,
-                        email: email,
-                        telefone: telefone,
-                        ramo: ramo },
-                    success: function (response) {
-                        $("div#retorno").html(response);
-                    }
-                });
-            });
-        });
-    </script>
-	
-	<!--EDITAR-->
-	<script>
-       
-        $(document).ready(function () {
-
-            $(".btnEditar btn btn-info btn-lg").click(function() {
-
-                var codigo_usuario = $("input[name=CodigoUsuario]").val();
-                var cnpj = $("input[name=cnpj]").val();
-                var razao = $("input[name=razao]").val();
-                var cep = $("input[name=cep]").val();
-                var endereco = $("input[name=endereco]").val();
-                var numero = $("input[name=numero]").val();
-                var bairro = $("input[name=bairro]").val();
-                var complemento = $("input[name=complemento]").val();
-                var cidade = $("input[name=cidade]").val();
-                var uf = $("input[name=uf]").val();
-                var email = $("input[name=email]").val();
-                var telefone = $("input[name=telefone]").val();
-                var ramo = $("input[name=ramo]").val();
-
-
-                $.ajax({
-                    dataType: "html",
-                    url:  "controler/gravar_usuario.php",
-                    data:{
-                        CodigoUsuario: codigo_usuario,
-                        cnpj: cnpj,
-                        razao: razao,
-                        cep: cep,
-                        endereco: endereco,
-                        numero: numero,
-                        bairro: bairro,
-                        complemento: complemento,
-                        cidade: cidade,
-                        uf: uf,
-                        email: email,
-                        telefone: telefone,
-                        ramo: ramo },
-                    success: function (response) {
-                        $("div#retorno").html(response);
-                    }
-                });
-            });
-        });
     </script>
 
 </head>
@@ -125,7 +34,7 @@ $DadosUsuario = Recuperar_Dados($CodigoUsuario);
             </div>
             <div class="modal-body">
 
-                <form action="" method="post">
+                <form action="https://projav.000webhostapp.com/ws_seed/Webservice.php?a=insertCliente" method="post">
 
                     <div class="row">
                         <!-- <div class="col-md-42"> -->
@@ -133,8 +42,8 @@ $DadosUsuario = Recuperar_Dados($CodigoUsuario);
                             <div class="form-group text-center">
 
                                 <!-- CODIGO USUÁRIO -->
-								<?php if ($CodigoUsuario != ""){?>
-                                <input name="CodigoUsuario" value="<?=$CodigoUsuario;?>" type="hidden">
+
+                                <input name="CodigoUsuario" value="" type="hidden">
 
 								
                                 <label for="cnpj">CNPJ</label>
@@ -227,14 +136,20 @@ $DadosUsuario = Recuperar_Dados($CodigoUsuario);
                             </div>
                         </div>
                     </div>
+
+                    <input type="submit" value="Submit me!" />
+
                 </form>
             </div>
 			
-					<?php }?>
+
 
 
             <!--BUTTON SAVE FORM -->
             <div class="modal-footer">
+
+                <input type="submit" value="Submit me!" />
+
                 <button type="button" value="btnCadastrar" class="btn btn-default" name="btnCadastrar"
                         id="btnCadastrar">Gravar</button>
 
