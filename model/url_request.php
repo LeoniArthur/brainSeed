@@ -1,9 +1,5 @@
 
 <?php
-
-
-
-
     function get_req($url) {
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, True);
