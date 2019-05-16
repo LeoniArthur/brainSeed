@@ -1,5 +1,10 @@
 <?php
 
+//Para Local
+//require_once ("/brainSeed/model/cliente.php");
+//require_once ("/brainSeed/controler/cliente_controler.php");
+//require_once ("/brainSeed/model/funcoes_diversas.php");
+
 require_once ("C:/Apache24/htdocs/brainSeed/model/cliente.php");
 require_once ("C:/Apache24/htdocs/brainSeed/controler/cliente_controler.php");
 require_once ("C:/Apache24/htdocs/brainSeed/model/funcoes_diversas.php");
@@ -148,9 +153,9 @@ require_once ("C:/Apache24/htdocs/brainSeed/model/funcoes_diversas.php");
             <!--BUTTON SAVE FORM -->
             <div class="modal-footer">
 
-                <input type="submit" value="Submit me!" />
 
-                <button type="button" value="btnCadastrar" class="btn btn-default" name="btnCadastrar"
+
+           <!--     <button type="button" value="btnCadastrar" class="btn btn-default" name="btnCadastrar"
                         id="btnCadastrar">Gravar</button>
 
                 <!--<button type="button" value="btnEditar" class="btn btn-default" name="btnEditar"
