@@ -33,21 +33,6 @@
     <link href="css/sb-admin.css" rel="stylesheet">
 
 
-    <script language="JavaScript">
-        function fechar_formulario() {
-            location.href="Cliente.php";
-        }
-    </script>
-	
-	<script> function carregar(pagina){$(".btnEditar btn btn-info btn-lg").load(pagina);}</script>
-	
-	<script language="JavaScript">
-		function show(){
-			
-		}
-		</script>
-
-
 </head>
 
 <body id="page-top">
@@ -57,8 +42,63 @@
 <div id="wrapper">
 
 
+<<<<<<< HEAD
     <?php  include ("view/partial_sideBar.php"); ?>
 
+=======
+    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <!-- Navbar -->
+    <ul class="navbar-nav ml-auto ml-md-0">
+        <li class="nav-item dropdown no-arrow mx-1">
+            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-bell fa-fw"></i>
+                <span class="badge badge-danger">9+</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown no-arrow mx-1">
+            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-envelope fa-fw"></i>
+                <span class="badge badge-danger">7</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown no-arrow">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-user-circle fa-fw"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="#">Settings</a>
+                <a class="dropdown-item" href="#">Activity Log</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+            </div>
+        </li>
+    </ul>
+>>>>>>> a30feac6c88a1a32a336ae09f9f60e7ed1a46176
 
 
 
@@ -96,15 +136,11 @@
             require_once('model/url_request.php');
             $clientes =  get_req('https://projav.000webhostapp.com/ws_seed/Webservice.php?a=selectClientes');
             $clientes = explode(";", $clientes);
+<<<<<<< HEAD
             echo $logado;
+=======
+>>>>>>> a30feac6c88a1a32a336ae09f9f60e7ed1a46176
             ?>
-
-            <div class="modal-footer">
-                <button type="button" value="btnCadastrar" class="btn btn-default" name="btnCadastrar"
-                        id="btnCadastrar">Gravar</button>
-
-                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="fechar_formulario()">Fechar</button>
-            </div>
 
        </div>
     </div>
@@ -142,6 +178,7 @@
                 </tr>
                 </tfoot>
                 <tbody>
+
                 <?php
 
                 $count = 0;
@@ -155,8 +192,8 @@
                     echo "<td>". $clientes[$count+11] . "</td>";
                     echo "<td>". $clientes[$count+0] . "</td>";
                     $count = $count+14;
-                    echo "<td><button type=\"button\" class=\"btnEditar btn btn-info btn-lg\"
-                       value=\"\" id=\"btnEditar\" data-target=\"#myModal\" data-toggle=\"modal\" onclick=\"\">Editar</button></td>";
+                    echo "<td><button type='button' class='btnEditar btn btn-info btn-lg'
+                       value='' id='btnEditar' data-target='#myModal' data-toggle='modal' onclick=''>Editar</button></td>";
                     echo "</tr>";
                 }
                 ?>

@@ -1,10 +1,14 @@
 
 <?php
+<<<<<<< HEAD
 
 
 
 
     function get_req($url,$post="") {
+=======
+    function get_req($url) {
+>>>>>>> a30feac6c88a1a32a336ae09f9f60e7ed1a46176
         $curl = curl_init();
 
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, True);
